@@ -108,7 +108,7 @@ function VideoPlayer({ playerRef }: { playerRef: any }) {
                   option === selectedOption && submittedAnswer && option === nextQuestion.correctAnswer
                     ? "bg-green-700 text-white"
                     : option === selectedOption && submittedAnswer && option !== nextQuestion.correctAnswer
-                    ? "bg-red-100 text-red-700"
+                    ? "bg-red-700 text-white"
                     : option === nextQuestion.correctAnswer && submittedAnswer
                     ? "bg-green-700 text-white"
                     : option === selectedOption
