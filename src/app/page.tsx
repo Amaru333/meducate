@@ -1,5 +1,9 @@
-import { Badge } from "@/components/ui/badge";
+import Homepage from "@/pages/test-component/Homepage";
+import VideoPlayer from "@/pages/test-component/VideoPlayer";
 import Image from "next/image";
+import React from "react";
+import ReactPlayer from "react-player";
+import { BaseReactPlayerProps } from "react-player/base";
 
 export default function Home() {
   return (
@@ -111,8 +115,7 @@ export default function Home() {
     //   </div>
     // </main>
     <div>
-      <p>Test</p>
-      <Badge variant="outline">Badge</Badge>
+      <Homepage />
     </div>
   );
 }
