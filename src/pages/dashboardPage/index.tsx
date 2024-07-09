@@ -2,6 +2,7 @@ import React from "react";
 import ContinueCourseCard from "./ContinueCourseCard";
 import SummaryCard from "./SummaryCard";
 import { WatchtimeChart } from "./WatchtimeChart";
+import RecommendedSection from "./RecommendedSection";
 
 function DashboardPage() {
   return (
@@ -13,6 +14,7 @@ function DashboardPage() {
       <div className="grid grid-cols-12 gap-8 mt-4">
         <div className="col-span-8">
           <ContinueCourseCard />
+          <RecommendedSection />
         </div>
         <div className="col-span-4 flex flex-col gap-8">
           <SummaryCard />

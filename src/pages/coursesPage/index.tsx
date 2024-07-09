@@ -9,7 +9,7 @@ function CoursesPage() {
       <div className="flex flex-row gap-x-8 overflow-x-scroll flex-1 w-[calc(100vw-256px)] no-scrollbar pb-2">
         <div className="w-8 h-full"></div>
         {c.map((_, i) => (
-          <DefaultCourseCard key={i} />
+          <DefaultCourseCard className="min-w-80" key={i} />
         ))}
         <div className="w-8 h-full"></div>
       </div>
@@ -17,7 +17,7 @@ function CoursesPage() {
       <div className="flex flex-row gap-x-8 overflow-x-scroll flex-1 w-[calc(100vw-256px)] no-scrollbar pb-2">
         <div className="w-8 h-full"></div>
         {c.map((_, i) => (
-          <DefaultCourseCard key={i} />
+          <DefaultCourseCard className="min-w-80" key={i} />
         ))}
         <div className="w-8 h-full"></div>
       </div>

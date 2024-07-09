@@ -1,10 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { cn } from "@/lib/utils";
 
-function DefaultCourseCard() {
+interface DefaultCourseCardProps {
+  className?: string;
+}
+
+function DefaultCourseCard({ className }: DefaultCourseCardProps) {
   return (
-    <div className="rounded-2xl shadow-md bg-white p-1 min-w-80">
+    <div className={cn("rounded-2xl shadow-md bg-white p-1", className)}>
       <Image alt="Thumbnail" src="/images/stock-thumbnail-1.png" width={0} height={0} sizes="100vw" className="h-64 w-full object-none rounded-2xl" />
       <div className="p-2">
         <p className="text-xs font-bold text-gray-500 my-1">SURGERY</p>
