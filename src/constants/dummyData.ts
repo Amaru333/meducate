@@ -81,3 +81,21 @@ export const DUMMY_COURSE_ITEMS = [
     thumbnail: "/images/stock-thumbnail-1.png",
   },
 ];
+
+export const DUMMY_COURSES = [
+  {
+    title: "Surgery for beginners",
+    description: "This is a course on how to do a surgery in 10 easy steps on a test subject in a lab.",
+    lectures: DUMMY_COURSE_ITEMS,
+  },
+  {
+    title: "Surgery for intermediates",
+    description: "This is a course on how to do a surgery in 10 easy steps on a test subject in a lab.",
+    lectures: DUMMY_COURSE_ITEMS,
+  },
+  {
+    title: "Surgery for experts",
+    description: "This is a course on how to do a surgery in 10 easy steps on a test subject in a lab.",
+    lectures: DUMMY_COURSE_ITEMS,
+  },
+];
