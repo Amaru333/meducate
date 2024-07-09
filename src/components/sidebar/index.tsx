@@ -13,7 +13,7 @@ function Sidebar() {
   return (
     <div className="w-64 h-full flex flex-col">
       <Link href="/dashboard/home" className="p-6 border-b h-20 flex items-center justify-center">
-        <Image alt="logo" src="/images/logo.png" width={80} height={0} sizes="100vw" className="object-contain rounded-2xl" />
+        <Image alt="logo" src="/images/logo-small.png" width={50} height={0} sizes="100vw" className="object-contain rounded-2xl" />
       </Link>
       <div className="py-8 px-6 gap-4 flex flex-col flex-1">
         {navbarData.map((item, idx) => (
