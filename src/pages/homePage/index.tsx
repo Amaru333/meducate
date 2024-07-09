@@ -38,6 +38,9 @@ function HomePage() {
           <button className="bg-white w-full max-w-sm text-primary border border-primary text-xs py-2 px-4 rounded-full hover:opacity-90 active:scale-95 transition-all mt-4">Join us</button>
         </div>
       </div>
+      <div>
+        <Image alt="sign-in-bg" src="/images/sign-in-bg.png" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
+      </div>
     </div>
   );
 }
