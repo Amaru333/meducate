@@ -24,7 +24,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function WatchtimeChart() {
+function WatchtimeChart() {
   const totalVisitors = React.useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.watchtime, 0);
   }, []);
@@ -60,3 +60,5 @@ export function WatchtimeChart() {
     </div>
   );
 }
+
+export default WatchtimeChart;

@@ -1,7 +1,7 @@
 import React from "react";
 import ContinueCourseCard from "./ContinueCourseCard";
 import SummaryCard from "./SummaryCard";
-import { WatchtimeChart } from "./WatchtimeChart";
+import WatchtimeChart from "./WatchtimeChart";
 import RecommendedSection from "./RecommendedSection";
 
 function DashboardPage() {
