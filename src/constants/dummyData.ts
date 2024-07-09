@@ -24,3 +24,42 @@ export const DUMMY_QUESTIONS = [
     correctAnswer: "London",
   },
 ];
+
+export const DUMMY_COURSE_ITEMS = [
+  {
+    title: "How to do a surgery",
+    duration: 221,
+    id: 1,
+    finished: true,
+  },
+  {
+    title: "Items required for surgery",
+    duration: 182,
+    id: 2,
+    finished: true,
+  },
+  {
+    title: "Surgical tools",
+    duration: 123,
+    id: 3,
+    finished: true,
+  },
+  {
+    title: "Surgical procedures",
+    duration: 221,
+    id: 4,
+    finished: false,
+  },
+  {
+    title: "Surgical complications",
+    duration: 221,
+    id: 5,
+    finished: false,
+  },
+  {
+    title: "Surgical recovery",
+    duration: 221,
+    id: 6,
+    finished: false,
+  },
+];

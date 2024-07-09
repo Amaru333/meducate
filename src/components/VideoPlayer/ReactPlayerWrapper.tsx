@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import ReactPlayer from "react-player";
+import "./Player.css";
 
 import { FaPlay, FaPause } from "react-icons/fa";
 import { TbRewindBackward10, TbRewindForward10 } from "react-icons/tb";
@@ -57,15 +58,19 @@ function ReactPlayerWrapper({ playerRef }: { playerRef: any }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roundedTime]);
   return (
-    <div className="w-fit group/video relative">
-      {!showQuestions && (
-        <div className="bg-black/30 backdrop-blur-lg w-full p-4 opacity-0 group-hover/video:opacity-100 transition-all absolute top-0 left-0">
-          <p className="text-white line-clamp-1">Title of the video Title of the video Title of the video Title of the video Title of the video Title of the video Title of the video Title of the video </p>
-        </div>
-      )}
-      <div onClick={() => setIsPlaying((previous) => !previous)}>
+    <div className="group/video relative">
+      {/* <>
+        {!showQuestions && (
+          <div className="bg-black/30 backdrop-blur-lg w-full p-4 opacity-0 group-hover/video:opacity-100 transition-all absolute top-0 left-0">
+            <p className="text-white line-clamp-1">Title of the video Title of the video Title of the video Title of the video Title of the video Title of the video Title of the video Title of the video </p>
+          </div>
+        )}
+      </> */}
+      <div className="player-wrapper" onClick={() => setIsPlaying((previous) => !previous)}>
         <ReactPlayer
           url="/videos/dummy-1.mp4"
+          width="100%"
+          height="100%"
           volume={volume}
           controls={false}
           ref={playerRef}
