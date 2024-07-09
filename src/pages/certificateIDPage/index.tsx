@@ -6,7 +6,7 @@ function CertificateIDPage() {
     <div className="p-20">
       <div className="bg-white p-12 flex flex-col items-center">
         <p className="font-mono text-5xl font-semibold text-primary mb-10">CERTIFICATE</p>
-        <Image alt="thumbnail" src="/images/logo.png" width={200} height={0} sizes="100vw" className="object-contain rounded-2xl mb-10" />
+        <Image alt="logo" src="/images/logo.png" width={200} height={0} sizes="100vw" className="object-contain rounded-2xl mb-10" />
         <p className="text-2xl font-semibold">Surgery for Beginners Certification</p>
         <hr className="w-96 my-4" />
         <p className="text-2xl font-light">John Doe</p>
