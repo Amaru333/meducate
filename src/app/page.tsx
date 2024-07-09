@@ -1,4 +1,4 @@
-import Homepage from "@/pages/test-component/Homepage";
+import HomePage from "@/pages/homePage";
 import React from "react";
 
 export default function Home() {
@@ -111,7 +111,7 @@ export default function Home() {
     //   </div>
     // </main>
     <div>
-      <Homepage />
+      <HomePage />
     </div>
   );
 }
