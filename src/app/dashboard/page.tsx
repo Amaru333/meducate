@@ -1,7 +1,7 @@
-import React from "react";
+import { redirect } from "next/navigation";
 
 function Dashboard() {
-  return <div>Dashboard</div>;
+  redirect("/dashboard/home");
 }
 
 export default Dashboard;

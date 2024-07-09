@@ -1,10 +1,8 @@
-import { FaBookMedical, FaTrophy } from "react-icons/fa6";
-import { FaHome } from "react-icons/fa";
-import { IoMdSettings } from "react-icons/io";
 import { CiTrophy } from "react-icons/ci";
 import { LiaBookMedicalSolid } from "react-icons/lia";
 import { CiSettings } from "react-icons/ci";
 import { GoHome } from "react-icons/go";
+import { PiCertificate } from "react-icons/pi";
 
 export const navbarData = [
   {
@@ -21,6 +19,11 @@ export const navbarData = [
     title: "Progress",
     icon: CiTrophy,
     link: "/dashboard/progress",
+  },
+  {
+    title: "Certificates",
+    icon: PiCertificate,
+    link: "/dashboard/certificates",
   },
   {
     title: "Settings",
