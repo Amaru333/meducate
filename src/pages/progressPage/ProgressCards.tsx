@@ -15,7 +15,7 @@ function ProgressCards({ course }: Props) {
     <div className="flex items-center justify-between py-4">
       <div className="flex items-center">
         <div className="ml-4">
-          <p className="text-lg font-semibold line-clamp-1">{course.title}</p>
+          <p className="text-lg font-semibold line-clamp-1">{course?.title}</p>
           <div className="flex mt-2 gap-x-2 items-center w-96">
             <Progress value={30} className="h-2" />
             <p className="text-xs font-semibold">30%</p>
