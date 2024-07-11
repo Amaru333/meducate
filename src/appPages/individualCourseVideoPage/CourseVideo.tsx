@@ -1,8 +1,5 @@
 import VideoPlayer from "@/components/VideoPlayer";
-import { VIEWING_ACTIVITY_ENDPOINT } from "@/constants/APIRoutes";
 import { QuestionInterface } from "@/constants/interfaces";
-import httpRequest from "@/utils/httpRequest";
-import { useParams } from "next/navigation";
 import React from "react";
 
 interface CourseVideoProps {
@@ -17,20 +14,10 @@ interface CourseVideoProps {
       question: QuestionInterface;
     }
   ];
+  onEnded?: () => void;
 }
 
-function CourseVideo({ title, description, videoURL, questions, duration }: CourseVideoProps) {
-  const params = useParams();
-  const onEnded = () => {
-    httpRequest
-      .post(VIEWING_ACTIVITY_ENDPOINT, { course: params?.["course-slug"], lecture: params?.["video-slug"], duration: duration })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+function CourseVideo({ title, description, videoURL, questions, onEnded }: CourseVideoProps) {
   return (
     <div>
       <div className="rounded-2xl overflow-hidden w-full">
