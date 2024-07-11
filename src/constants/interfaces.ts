@@ -1,4 +1,4 @@
-export interface QuestionsInterface {
+export interface QuestionInterface {
   _id: string;
   question: string;
   answer: string;
@@ -21,7 +21,7 @@ export interface LectureInterface {
     {
       timestamp: number;
       _id: string;
-      question: QuestionsInterface;
+      question: QuestionInterface;
     }
   ];
 }

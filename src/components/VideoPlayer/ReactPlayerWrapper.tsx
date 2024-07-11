@@ -11,12 +11,23 @@ import { formatSeconds } from "@/utils/functions";
 import { Slider } from "@/components/ui/slider";
 import { SliderWithoutThumb } from "@/components/ui/sliderWithoutThumb";
 
-import { DUMMY_QUESTIONS } from "@/constants/dummyData";
-
 import confettiAnimation from "./confetti.json";
 import Lottie from "lottie-react";
+import { QuestionInterface } from "@/constants/interfaces";
 
-function ReactPlayerWrapper({ playerRef }: { playerRef: any }) {
+interface ReactPlayerWrapperProps {
+  playerRef: any;
+  videoURL: string;
+  questions: [
+    {
+      timestamp: number;
+      _id: string;
+      question: QuestionInterface;
+    }
+  ];
+}
+
+function ReactPlayerWrapper({ playerRef, videoURL, questions }: ReactPlayerWrapperProps) {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [playbackRate, setPlaybackRate] = React.useState(1.0);
   const [seek, setSeek] = React.useState(0);
@@ -32,11 +43,11 @@ function ReactPlayerWrapper({ playerRef }: { playerRef: any }) {
   const playbackSpeeds = [1.0, 1.5, 2.0];
   const roundedTime = Math.round(seek * duration);
 
-  const nextQuestion = DUMMY_QUESTIONS.filter((question) => question.timeStamp >= roundedTime)[0];
+  const nextQuestion = questions.filter((question) => question.timestamp >= roundedTime)[0];
   console.log(selectedOption, submittedAnswer, !selectedOption || submittedAnswer, "selectedOption, submittedAnswer");
   const submitAnswer = () => {
     setSubmittedAnswer(true);
-    if (nextQuestion.correctAnswer === selectedOption) {
+    if (nextQuestion.question.answer === selectedOption) {
       setIsAnimationShown(true);
     } else {
       setTimeout(() => {
@@ -49,7 +60,7 @@ function ReactPlayerWrapper({ playerRef }: { playerRef: any }) {
   };
 
   useEffect(() => {
-    if (nextQuestion && roundedTime === nextQuestion.timeStamp) {
+    if (nextQuestion && roundedTime === nextQuestion.timestamp) {
       setShowQuestions(true);
       setIsPlaying(false);
     } else {
@@ -68,7 +79,7 @@ function ReactPlayerWrapper({ playerRef }: { playerRef: any }) {
       </> */}
       <div className="player-wrapper" onClick={() => setIsPlaying((previous) => !previous)}>
         <ReactPlayer
-          url="/videos/dummy-1.mp4"
+          url={videoURL}
           width="100%"
           height="100%"
           volume={volume}
@@ -103,18 +114,18 @@ function ReactPlayerWrapper({ playerRef }: { playerRef: any }) {
       {showQuestions && (
         <div className="h-full w-full absolute top-0 left-0 bg-black bg-opacity-70 p-8 flex items-end z-30">
           <div className="bg-white rounded-2xl text-sm p-4 w-full">
-            <p className="pb-4">{nextQuestion.question}</p>
+            <p className="pb-4">{nextQuestion.question.question}</p>
             <div className="grid grid-cols-2 gap-4 text-xs">
-              {nextQuestion.options.map((option, index) => (
+              {nextQuestion.question.options.map((option, index: React.Key | null | undefined) => (
                 <button
                   key={index}
                   className={`rounded-lg p-2 text-left hover:bg-primary hover:bg-opacity-90 hover:text-white transition-all active:scale-95 
                 ${
-                  option === selectedOption && submittedAnswer && option === nextQuestion.correctAnswer
+                  option === selectedOption && submittedAnswer && option === nextQuestion.question.answer
                     ? "bg-green-700 text-white"
-                    : option === selectedOption && submittedAnswer && option !== nextQuestion.correctAnswer
+                    : option === selectedOption && submittedAnswer && option !== nextQuestion.question.answer
                     ? "bg-red-700 text-white"
-                    : option === nextQuestion.correctAnswer && submittedAnswer
+                    : option === nextQuestion.question.answer && submittedAnswer
                     ? "bg-green-700 text-white"
                     : option === selectedOption
                     ? "bg-primary text-white"
