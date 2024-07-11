@@ -29,7 +29,6 @@ function WatchtimeChart() {
       .get(WEEKLY_WATCHTIME_ENDPOINT)
       .then((res) => {
         setWeeklyWatchtime(parseInt(res.data));
-        console.log(res);
       })
       .catch((err) => {
         console.log(err);

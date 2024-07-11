@@ -1,4 +1,4 @@
-import SettingsPage from "@/pages/settingsPage";
+import SettingsPage from "@/appPages/settingsPage";
 import React from "react";
 
 function Settings() {

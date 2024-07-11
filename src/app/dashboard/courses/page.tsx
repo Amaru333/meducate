@@ -1,4 +1,4 @@
-import CoursesPage from "@/pages/coursesPage";
+import CoursesPage from "@/appPages/coursesPage";
 import React from "react";
 
 function Courses() {

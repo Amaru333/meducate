@@ -1,4 +1,4 @@
-import IndividualCourseVideoPage from "@/pages/individualCourseVideoPage";
+import IndividualCourseVideoPage from "@/appPages/individualCourseVideoPage";
 import React from "react";
 
 function IndividualCourseVideo() {

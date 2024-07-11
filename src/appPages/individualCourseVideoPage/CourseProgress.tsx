@@ -11,7 +11,7 @@ function CourseProgress({ value }: CourseProgressProps) {
       <p className="text-sm font-medium mb-4">Course Progress</p>
       <div className="flex flex-row gap-x-2 items-center">
         <Progress value={value} className="flex-1" />
-        <p className="font-semibold">{value.toFixed(2)}%</p>
+        <p className="font-semibold">{value?.toFixed(2)}%</p>
       </div>
     </div>
   );

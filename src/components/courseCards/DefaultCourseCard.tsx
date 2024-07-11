@@ -10,7 +10,6 @@ interface DefaultCourseCardProps {
 }
 
 function DefaultCourseCard({ className, data }: DefaultCourseCardProps) {
-  console.log(data, "COURSE DATA");
   let totalQuestions = 0;
   let totalDuration = 0;
 

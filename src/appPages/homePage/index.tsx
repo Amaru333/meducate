@@ -32,7 +32,6 @@ function HomePage() {
     axios
       .post(LOGIN_ENDPOINT, userDetails)
       .then((res) => {
-        console.log(res, "RES");
         dispatch(setUser(res.data));
         setLocalItem("meducate-token", res.headers["auth-token"]);
         toast("Logged in successfully", { style: { background: "green", color: "white" } });

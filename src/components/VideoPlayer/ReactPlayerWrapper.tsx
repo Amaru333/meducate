@@ -45,7 +45,6 @@ function ReactPlayerWrapper({ playerRef, videoURL, questions, onEnded }: ReactPl
   const roundedTime = Math.round(seek * duration);
 
   const nextQuestion = questions.filter((question) => question.timestamp >= roundedTime)[0];
-  console.log(selectedOption, submittedAnswer, !selectedOption || submittedAnswer, "selectedOption, submittedAnswer");
   const submitAnswer = () => {
     setSubmittedAnswer(true);
     if (nextQuestion.question.answer === selectedOption) {

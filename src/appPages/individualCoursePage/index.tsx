@@ -27,7 +27,6 @@ function IndividualCoursePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(courseData, "courseData");
   let totalQuestions = 0;
   let totalDuration = 0;
 

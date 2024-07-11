@@ -19,7 +19,6 @@ function AuthGuard({ children }: AuthGuardProps) {
   const [loading, setLoading] = React.useState(true);
   useEffect(() => {
     const token = getLocalItem("meducate-token");
-    console.log(token);
     if (!token) {
       setLoading(false);
       redirect("/");

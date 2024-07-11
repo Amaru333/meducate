@@ -1,4 +1,4 @@
-import CertificatePage from "@/pages/certificatePage";
+import CertificatePage from "@/appPages/certificatePage";
 import React from "react";
 
 function Certificate() {

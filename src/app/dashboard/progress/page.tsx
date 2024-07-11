@@ -1,4 +1,4 @@
-import ProgressPage from "@/pages/progressPage";
+import ProgressPage from "@/appPages/progressPage";
 import React from "react";
 
 function Progress() {

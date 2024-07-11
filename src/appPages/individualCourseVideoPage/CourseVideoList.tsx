@@ -19,10 +19,9 @@ interface CourseVideoListProps {
 
 function CourseVideoList({ completedLectures, lectureList }: CourseVideoListProps) {
   const params = useParams();
-  console.log(completedLectures, lectureList, "completedLectures, lectureList");
   return (
     <div className="bg-white rounded-2xl shadow-md p-4">
-      {lectureList.map((item, idx) => (
+      {lectureList?.map((item, idx) => (
         <Link href={item.lecture._id} key={idx} className={`flex w-full items-center justify-between p-3 text-sm rounded-2xl hover:bg-primary hover:bg-opacity-20 gap-x-4 transition-all ${params?.["video-slug"] === item.lecture._id ? "bg-primary bg-opacity-10" : "bg-transparent"}`}>
           <div>
             <p className="line-clamp-1">

@@ -1,4 +1,4 @@
-import HomePage from "@/pages/homePage";
+import HomePage from "@/appPages/homePage";
 import React from "react";
 
 export default function Home() {
