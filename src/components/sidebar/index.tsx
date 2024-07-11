@@ -1,15 +1,24 @@
 "use client";
 
 import { navbarData } from "@/constants/navbarData";
+import { removeUser } from "@/redux/slices/userSlice";
+import { removeLocalItem } from "@/utils/localStorageFunctions";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { IoIosLogOut } from "react-icons/io";
+import { useDispatch } from "react-redux";
 
 function Sidebar() {
+  const dispatch = useDispatch();
   const pathname = usePathname();
   const router = useRouter();
+  const logoutUser = () => {
+    dispatch(removeUser());
+    removeLocalItem("meducate-token");
+    router.push("/");
+  };
   return (
     <div className="w-64 h-full flex flex-col">
       <Link href="/dashboard/home" className="p-6 border-b h-20 flex items-center justify-center">
@@ -29,7 +38,7 @@ function Sidebar() {
         ))}
       </div>
       <div className="px-6 pb-12">
-        <button className={`flex w-full items-center gap-3 px-4 py-3 rounded-full text-red-500 active:scale-95 hover:bg-red-500 hover:bg-opacity-5 transition-all overflow-hidden`} onClick={() => router.push("/")}>
+        <button className={`flex w-full items-center gap-3 px-4 py-3 rounded-full text-red-500 active:scale-95 hover:bg-red-500 hover:bg-opacity-5 transition-all overflow-hidden`} onClick={logoutUser}>
           <div>{IoIosLogOut({ style: { width: "20px", height: "20px" }, strokeWidth: 0.25 })}</div>
           <p className="text-sm">Logout</p>
         </button>
