@@ -5,29 +5,44 @@ import { Label, Pie, PieChart } from "recharts";
 
 import { CardContent } from "@/components/ui/card";
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-const chartData = [
-  { labelName: "Watched", watchtime: 275, fill: "var(--color-chromea)" },
-  { labelName: "Remaining", watchtime: 200, fill: "var(--color-safari)" },
-];
+import httpRequest from "@/utils/httpRequest";
+import { WEEKLY_WATCHTIME_ENDPOINT } from "@/constants/APIRoutes";
 
 const chartConfig = {
   watchtime: {
     label: "Visitors",
   },
-  chromea: {
-    label: "Chrome",
+  watched: {
+    label: "Watched",
     color: "#566cd2",
   },
-  safari: {
-    label: "Safari",
+  remaining: {
+    label: "Remaining",
     color: "#566cd21D",
   },
 } satisfies ChartConfig;
 
 function WatchtimeChart() {
-  const totalVisitors = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.watchtime, 0);
+  const [weeklyWatchtime, setWeeklyWatchtime] = React.useState(0);
+  React.useEffect(() => {
+    httpRequest
+      .get(WEEKLY_WATCHTIME_ENDPOINT)
+      .then((res) => {
+        setWeeklyWatchtime(parseInt(res.data));
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
+  const chartData = [
+    { labelName: "Watched", watchtime: weeklyWatchtime, fill: "var(--color-watched)" },
+    { labelName: "Remaining", watchtime: 500 - weeklyWatchtime, fill: "var(--color-remaining)" },
+  ];
+  // const totalVisitors = React.useMemo(() => {
+  //   return chartData.reduce((acc, curr) => acc + curr.watchtime, 0);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <div className="bg-white p-4 rounded-2xl shadow-md">
@@ -43,7 +58,7 @@ function WatchtimeChart() {
                     return (
                       <text x={viewBox.cx} y={viewBox.cy} textAnchor="middle" dominantBaseline="middle">
                         <tspan x={viewBox.cx} y={viewBox.cy} className="fill-foreground text-xl font-bold">
-                          {totalVisitors.toLocaleString()} <tspan className="text-xs">mins</tspan>
+                          {weeklyWatchtime} <tspan className="text-xs">mins</tspan>
                         </tspan>
                         <tspan x={viewBox.cx} y={(viewBox.cy || 0) + 24} className="fill-muted-foreground">
                           Watchtime

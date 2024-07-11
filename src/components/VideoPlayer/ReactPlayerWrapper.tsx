@@ -25,9 +25,10 @@ interface ReactPlayerWrapperProps {
       question: QuestionInterface;
     }
   ];
+  onEnded?: () => void;
 }
 
-function ReactPlayerWrapper({ playerRef, videoURL, questions }: ReactPlayerWrapperProps) {
+function ReactPlayerWrapper({ playerRef, videoURL, questions, onEnded }: ReactPlayerWrapperProps) {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [playbackRate, setPlaybackRate] = React.useState(1.0);
   const [seek, setSeek] = React.useState(0);
@@ -93,6 +94,7 @@ function ReactPlayerWrapper({ playerRef, videoURL, questions }: ReactPlayerWrapp
           onProgress={(state) => {
             if (!seeking) setSeek(state.played);
           }}
+          onEnded={() => onEnded && onEnded()}
         />
       </div>
       {isAnimationShown && (

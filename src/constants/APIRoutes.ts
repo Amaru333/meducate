@@ -10,5 +10,12 @@ export const AUTO_LOGIN_ENDPOINT = USER_ENDPOINT + "/auto-login";
 export const COURSE_ENDPOINT = API_ENDPOINT + "/course";
 export const USER_COURSE_ENDPOINT = COURSE_ENDPOINT + "/user-courses";
 export const TRENDING_COURSE_ENDPOINT = COURSE_ENDPOINT + "/trending";
+export const RECOMMENDED_COURSE_ENDPOINT = COURSE_ENDPOINT + "/recommended";
 
 export const LECTURE_ENDPOINT = API_ENDPOINT + "/lecture";
+export const COURSE_LECTURES_ENDPOINT = LECTURE_ENDPOINT + "/course";
+
+export const ACTIVITY_ENDPOINT = API_ENDPOINT + "/activity";
+export const VIEWING_ACTIVITY_ENDPOINT = ACTIVITY_ENDPOINT + "/viewing";
+export const COMPLETED_LECTURES_ACTIVITY_ENDPOINT = ACTIVITY_ENDPOINT + "/completed-lectures";
+export const WEEKLY_WATCHTIME_ENDPOINT = ACTIVITY_ENDPOINT + "/weekly-watchtime";

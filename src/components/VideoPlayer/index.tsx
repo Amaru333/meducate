@@ -14,11 +14,12 @@ interface VideoPlayerProps {
       question: QuestionInterface;
     }
   ];
+  onEnded?: () => void;
 }
 
-function VideoPlayer({ videoURL, questions }: VideoPlayerProps) {
+function VideoPlayer({ videoURL, questions, onEnded }: VideoPlayerProps) {
   const playerRef = React.useRef<BaseReactPlayerProps>(null);
-  return <ReactPlayerWrapper videoURL={videoURL} questions={questions} playerRef={playerRef} />;
+  return <ReactPlayerWrapper videoURL={videoURL} questions={questions} playerRef={playerRef} onEnded={onEnded} />;
 }
 
 export default VideoPlayer;

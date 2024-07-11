@@ -26,6 +26,8 @@ function IndividualCoursePage() {
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  console.log(courseData, "courseData");
   let totalQuestions = 0;
   let totalDuration = 0;
 
@@ -58,7 +60,7 @@ function IndividualCoursePage() {
           </div>
         </div>
       </div>
-      <Link href={"/dashboard/courses/how-to-do-surgery/" + sortedLectures?.[0].lecture._id}>
+      <Link href={"/dashboard/courses/" + courseData?.slug + "/" + sortedLectures?.[0].lecture._id}>
         <button className="bg-primary px-20 py-3 text-white rounded-xl bg-opacity-100 hover:bg-opacity-90transition-all active:scale-95">Start course</button>
       </Link>
       <p className="text-xs mt-2">
