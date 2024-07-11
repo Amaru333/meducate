@@ -1,11 +1,24 @@
+"use client";
+
 import { Progress } from "@/components/ui/progress";
+import { RECENTLY_WATCHED_COURSE_ENDPOINT } from "@/constants/APIRoutes";
 import { DUMMY_COURSE_ITEMS } from "@/constants/dummyData";
 import { formatSeconds } from "@/utils/functions";
+import httpRequest from "@/utils/httpRequest";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 function ContinueCourseCard() {
+  const [courseDetails, setCourseDetails] = React.useState();
+  useEffect(() => {
+    httpRequest
+      .get(RECENTLY_WATCHED_COURSE_ENDPOINT)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div className="bg-white p-4 rounded-2xl shadow-md">
       <div className="flex">

@@ -1,5 +1,5 @@
-export const BACKEND_URL = "http://localhost:3004";
-// export const BACKEND_URL = "https://meducate-backend.onrender.com";
+// export const BACKEND_URL = "http://localhost:3004";
+export const BACKEND_URL = "https://meducate-backend.onrender.com";
 
 export const API_ENDPOINT = BACKEND_URL + "/api";
 
@@ -12,6 +12,7 @@ export const COURSE_ENDPOINT = API_ENDPOINT + "/course";
 export const USER_COURSE_ENDPOINT = COURSE_ENDPOINT + "/user-courses";
 export const TRENDING_COURSE_ENDPOINT = COURSE_ENDPOINT + "/trending";
 export const RECOMMENDED_COURSE_ENDPOINT = COURSE_ENDPOINT + "/recommended";
+export const RECENTLY_WATCHED_COURSE_ENDPOINT = COURSE_ENDPOINT + "/recently-watched";
 
 export const LECTURE_ENDPOINT = API_ENDPOINT + "/lecture";
 export const COURSE_LECTURES_ENDPOINT = LECTURE_ENDPOINT + "/course";
