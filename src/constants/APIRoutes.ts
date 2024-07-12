@@ -1,5 +1,5 @@
-export const BACKEND_URL = "http://localhost:3004";
-// export const BACKEND_URL = "https://meducate-backend.onrender.com";
+// export const BACKEND_URL = "http://localhost:3004";
+export const BACKEND_URL = "https://meducate-backend.onrender.com";
 
 export const API_ENDPOINT = BACKEND_URL + "/api";
 
