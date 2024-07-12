@@ -20,9 +20,9 @@ function ContinueCourseCard() {
       })
       .catch((err) => console.log(err));
   }, []);
-  return (
+  return courseDetails ? (
     <div className="bg-white p-4 rounded-2xl shadow-md">
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         <Image alt="thumbnail" src="/images/stock-thumbnail-1.png" width={300} height={0} sizes="100vw" className="object-contain rounded-2xl" />
         <div className="pl-4 flex flex-col">
           <div className="flex-1">
@@ -45,6 +45,8 @@ function ContinueCourseCard() {
         </div>
       </div>
     </div>
+  ) : (
+    <div></div>
   );
 }
 

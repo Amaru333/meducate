@@ -43,7 +43,7 @@ function HomePage() {
   };
   return (
     <div className="w-screen h-screen bg-gray-100 p-8 grid grid-cols-2">
-      <div className="bg-white rounded-2xl">
+      <div className="bg-white rounded-2xl col-span-2 lg:col-span-1 px-4 lg:px-0">
         <div className="flex flex-col items-center justify-center h-full gap-x-4">
           <Image alt="logo" src="/images/logo.png" width={150} height={0} sizes="100vw" className="object-contain rounded-2xl" />
           <p className="text-2xl font-medium max-w-sm text-center">Get ready and join us on a Medi Learning Adventure!</p>
@@ -77,7 +77,7 @@ function HomePage() {
           </button>
         </div>
       </div>
-      <div>
+      <div className="hidden lg:flex">
         <Image alt="sign-in-bg" src="/images/sign-in-bg.png" width={0} height={0} sizes="100vw" style={{ width: "100%", height: "auto" }} />
       </div>
     </div>

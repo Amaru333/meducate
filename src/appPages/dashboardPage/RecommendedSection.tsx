@@ -19,7 +19,7 @@ function RecommendedSection() {
       <p className="text-2xl font-semibold w-full border-b pb-4">Recommended for you</p>
       <div className="grid grid-cols-3 gap-x-8 mt-8">
         {recommendedCourses.map((course, i) => (
-          <DefaultCourseCard data={course} key={i} />
+          <DefaultCourseCard data={course} key={i} className="col-span-2 lg:col-span-1" />
         ))}
       </div>
     </div>
