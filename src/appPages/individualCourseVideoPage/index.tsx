@@ -6,7 +6,7 @@ import CourseProgress from "./CourseProgress";
 import CourseVideoList from "./CourseVideoList";
 import { LectureInterface } from "@/constants/interfaces";
 import httpRequest from "@/utils/httpRequest";
-import { COMPLETED_LECTURES_ACTIVITY_ENDPOINT, COURSE_LECTURES_ENDPOINT, LECTURE_ENDPOINT, VIEWING_ACTIVITY_ENDPOINT } from "@/constants/APIRoutes";
+import { ADD_CERTIFICATE_ENDPOINT, COMPLETED_LECTURES_ACTIVITY_ENDPOINT, COURSE_LECTURES_ENDPOINT, LECTURE_ENDPOINT, VIEWING_ACTIVITY_ENDPOINT } from "@/constants/APIRoutes";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
 
@@ -45,6 +45,10 @@ function IndividualCourseVideoPage() {
         console.log(res);
         if (!completedLectures.includes(params?.["video-slug"] as string)) {
           setCompletedLectures([...completedLectures, params?.["video-slug"] as string]);
+        }
+        if (completedLectures.length + 1 === lectureList.length) {
+          toast("Congratulations! You have completed the course.", { style: { background: "green", color: "white" } });
+          httpRequest.post(ADD_CERTIFICATE_ENDPOINT, { course: params?.["course-slug"] });
         }
       })
       .catch((err) => {

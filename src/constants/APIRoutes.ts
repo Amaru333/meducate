@@ -21,3 +21,7 @@ export const ACTIVITY_ENDPOINT = API_ENDPOINT + "/activity";
 export const VIEWING_ACTIVITY_ENDPOINT = ACTIVITY_ENDPOINT + "/viewing";
 export const COMPLETED_LECTURES_ACTIVITY_ENDPOINT = ACTIVITY_ENDPOINT + "/completed-lectures";
 export const WEEKLY_WATCHTIME_ENDPOINT = ACTIVITY_ENDPOINT + "/weekly-watchtime";
+
+export const ADD_CERTIFICATE_ENDPOINT = COURSE_ENDPOINT + "/generate-certificate";
+export const GET_CERTIFICATES_ENDPOINT = COURSE_ENDPOINT + "/certificates";
+export const GET_CERTIFICATE_ENDPOINT = COURSE_ENDPOINT + "/certificate";

@@ -24,7 +24,7 @@ function ProgressCards({ course }: Props) {
       </div>
       <div className="flex flex-col items-end">
         <p className="text-xs text-gray-500">In progress</p>
-        <Link href="/dashboard/courses/how-to-do-surgery/1">
+        <Link href="/dashboard/courses/physical-injuries-and-concussion">
           <button className="text-sm font-bold text-primary hover:opacity-80">CONTINUE</button>
         </Link>
       </div>
