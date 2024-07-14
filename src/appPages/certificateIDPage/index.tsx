@@ -31,7 +31,7 @@ function CertificateIDPage() {
         <p className="text-2xl font-light">{certificateData?.user?.email}</p>
         <p className="text-center mt-8 max-w-4xl">
           This is to certify that <span className="font-semibold">{certificateData?.user?.email}</span> has successfully completed the course
-          <span className="font-semibold"> Surgery for Beginners</span>. They have deemed the capability to perform surgeries on their own.
+          <span className="font-semibold"> {certificateData?.course?.title}</span>. {certificateData?.description}
         </p>
         <p className="mt-12 text-xs text-gray-500">
           Certified: {moment(certificateData?.user?.createdAt).utc().format("MMMM D, YYYY")} - {moment(certificateData?.user?.createdAt).add(1, "year").utc().format("MMMM D, YYYY")}
